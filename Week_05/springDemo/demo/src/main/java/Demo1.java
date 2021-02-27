@@ -12,19 +12,22 @@ public class Demo1 {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
+        context.registerBean("student2", Student.class, () -> new Student("student2", 1));
         context.refresh();
 
-        Student student = context.getBean(Student.class);
+        Student student1 = context.getBean("student1", Student.class);
+        Student student2 = context.getBean("student2", Student.class);
 
-        System.out.println(student.getName());
+        System.out.println(student1.getName());
+        System.out.println(student2.getName());
 
     }
 
     public static class AppConfig {
 
-        @Bean
+        @Bean("student1")
         public Student getStudent1() {
-            return new Student("s1", 10);
+            return new Student("student1", 10);
         }
 
     }
