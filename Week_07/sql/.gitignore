@@ -1,0 +1,13 @@
+.idea
+sql.iml
+insert/.mvn
+insert/mvnw.cmd
+insert/mvnw
+
+split1/.mvn
+split1/mvnw.cmd
+split1/mvnw
+
+split2/.mvn
+split2/mvnw.cmd
+split2/mvnw
